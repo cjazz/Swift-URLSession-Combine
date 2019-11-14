@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880E84C4237DA61D00DF4D0E /* Swift_URLSession_CombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E84C3237DA61D00DF4D0E /* Swift_URLSession_CombineTests.swift */; };
 		886825F2237A38070004C266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886825F1237A38070004C266 /* AppDelegate.swift */; };
 		886825F4237A38070004C266 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886825F3237A38070004C266 /* SceneDelegate.swift */; };
 		886825F6237A38070004C266 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886825F5237A38070004C266 /* ViewController.swift */; };
@@ -14,9 +15,23 @@
 		886825FB237A380C0004C266 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 886825FA237A380C0004C266 /* Assets.xcassets */; };
 		886825FE237A380C0004C266 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886825FC237A380C0004C266 /* LaunchScreen.storyboard */; };
 		88682606237A385B0004C266 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88682605237A385B0004C266 /* Models.swift */; };
+		88A5A2F9237DAB6400FB4600 /* testModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A5A2F8237DAB6400FB4600 /* testModels.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		880E84C6237DA61D00DF4D0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 886825E6237A38070004C266 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 886825ED237A38070004C266;
+			remoteInfo = "Swift-URLSession-Combine";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		880E84C1237DA61D00DF4D0E /* Swift-URLSession-CombineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-URLSession-CombineTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		880E84C3237DA61D00DF4D0E /* Swift_URLSession_CombineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_URLSession_CombineTests.swift; sourceTree = "<group>"; };
+		880E84C5237DA61D00DF4D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		886825EE237A38070004C266 /* Swift-URLSession-Combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-URLSession-Combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		886825F1237A38070004C266 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		886825F3237A38070004C266 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,9 +41,17 @@
 		886825FD237A380C0004C266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		886825FF237A380C0004C266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88682605237A385B0004C266 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		88A5A2F8237DAB6400FB4600 /* testModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		880E84BE237DA61D00DF4D0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		886825EB237A38070004C266 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +62,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		880E84C2237DA61D00DF4D0E /* Swift-URLSession-CombineTests */ = {
+			isa = PBXGroup;
+			children = (
+				88A5A2F8237DAB6400FB4600 /* testModels.swift */,
+				880E84C3237DA61D00DF4D0E /* Swift_URLSession_CombineTests.swift */,
+				880E84C5237DA61D00DF4D0E /* Info.plist */,
+			);
+			path = "Swift-URLSession-CombineTests";
+			sourceTree = "<group>";
+		};
 		886825E5237A38070004C266 = {
 			isa = PBXGroup;
 			children = (
 				886825F0237A38070004C266 /* Swift-URLSession-Combine */,
+				880E84C2237DA61D00DF4D0E /* Swift-URLSession-CombineTests */,
 				886825EF237A38070004C266 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				886825EE237A38070004C266 /* Swift-URLSession-Combine.app */,
+				880E84C1237DA61D00DF4D0E /* Swift-URLSession-CombineTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +108,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		880E84C0237DA61D00DF4D0E /* Swift-URLSession-CombineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880E84CA237DA61D00DF4D0E /* Build configuration list for PBXNativeTarget "Swift-URLSession-CombineTests" */;
+			buildPhases = (
+				880E84BD237DA61D00DF4D0E /* Sources */,
+				880E84BE237DA61D00DF4D0E /* Frameworks */,
+				880E84BF237DA61D00DF4D0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				880E84C7237DA61D00DF4D0E /* PBXTargetDependency */,
+			);
+			name = "Swift-URLSession-CombineTests";
+			productName = "Swift-URLSession-CombineTests";
+			productReference = 880E84C1237DA61D00DF4D0E /* Swift-URLSession-CombineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		886825ED237A38070004C266 /* Swift-URLSession-Combine */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88682602237A380C0004C266 /* Build configuration list for PBXNativeTarget "Swift-URLSession-Combine" */;
@@ -100,6 +153,10 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Adam Chin";
 				TargetAttributes = {
+					880E84C0237DA61D00DF4D0E = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = 886825ED237A38070004C266;
+					};
 					886825ED237A38070004C266 = {
 						CreatedOnToolsVersion = 11.2;
 					};
@@ -119,11 +176,19 @@
 			projectRoot = "";
 			targets = (
 				886825ED237A38070004C266 /* Swift-URLSession-Combine */,
+				880E84C0237DA61D00DF4D0E /* Swift-URLSession-CombineTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		880E84BF237DA61D00DF4D0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		886825EC237A38070004C266 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,6 +202,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		880E84BD237DA61D00DF4D0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880E84C4237DA61D00DF4D0E /* Swift_URLSession_CombineTests.swift in Sources */,
+				88A5A2F9237DAB6400FB4600 /* testModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		886825EA237A38070004C266 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -149,6 +223,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		880E84C7237DA61D00DF4D0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 886825ED237A38070004C266 /* Swift-URLSession-Combine */;
+			targetProxy = 880E84C6237DA61D00DF4D0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		886825F7237A38070004C266 /* Main.storyboard */ = {
@@ -170,6 +252,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		880E84C8237DA61D00DF4D0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PW6A8Y96ZX;
+				INFOPLIST_FILE = "Swift-URLSession-CombineTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hb.Swift-URLSession-CombineTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-URLSession-Combine.app/Swift-URLSession-Combine";
+			};
+			name = Debug;
+		};
+		880E84C9237DA61D00DF4D0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PW6A8Y96ZX;
+				INFOPLIST_FILE = "Swift-URLSession-CombineTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hb.Swift-URLSession-CombineTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift-URLSession-Combine.app/Swift-URLSession-Combine";
+			};
+			name = Release;
+		};
 		88682600237A380C0004C266 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -325,6 +447,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		880E84CA237DA61D00DF4D0E /* Build configuration list for PBXNativeTarget "Swift-URLSession-CombineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880E84C8237DA61D00DF4D0E /* Debug */,
+				880E84C9237DA61D00DF4D0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		886825E9237A38070004C266 /* Build configuration list for PBXProject "Swift-URLSession-Combine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
