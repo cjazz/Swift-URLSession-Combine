@@ -15,7 +15,7 @@ class testModels: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-  func testFirstNameNotEmpty() throws {
+  func testImageURLNotEmpty() throws {
     let card = Card(id: "22", name: "hello", nationalPokedexNumber: 2, imageUrl: "http.whaterver", imageUrlHiRes: "http.what")
     let imageURL =  try XCTUnwrap(card.imageUrl)
       XCTAssertFalse(imageURL.isEmpty)
