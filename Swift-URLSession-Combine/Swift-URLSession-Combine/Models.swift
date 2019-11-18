@@ -49,3 +49,13 @@ struct Card: Codable {
   let imageUrl:String?
   let imageUrlHiRes:String?
 }
+
+
+struct Position: Codable, Identifiable {
+  let id: String
+  let type: String
+  let url: String
+  let company: String
+  let location: String
+  let title: String
+}

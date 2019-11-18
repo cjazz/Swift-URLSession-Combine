@@ -35,6 +35,13 @@ class ViewController: UIViewController {
     }
   }
   
+  private var jobs: [Position] = [] {
+    didSet{
+      jobs.forEach {
+        (print("id: \($0.id) • title: \($0.title)"))
+      }
+    }
+  }
    
   
   override func viewDidLoad() {
@@ -60,6 +67,23 @@ class ViewController: UIViewController {
   @IBAction func tappedPokeCards(_ sender: Any) {
     getPokeCards()
   }
+  
+  @IBAction func tappedGetJobs(_ sender: Any) {
+    
+    //https://jobs.github.com/positions.json?search=swift"
+    
+    getJobs()
+  }
+  func getJobs() {
+    let url = URL(string: "https://jobs.github.com/positions.json?search=Swift")!
+    self.cancellable = URLSession.shared.dataTaskPublisher(for: url)
+     .map { $0.data }
+     .decode(type: [Position].self, decoder: JSONDecoder())
+     .replaceError(with: [])
+     .eraseToAnyPublisher()
+     .assign(to: \.jobs, on: self)
+   }
+   
   
   func getPosts(){
     let url1 = URL(string: "https://jsonplaceholder.typicode.com/posts")!
