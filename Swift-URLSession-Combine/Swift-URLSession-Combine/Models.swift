@@ -28,6 +28,19 @@ struct Pst {
   }
 }
 
+struct DPost: Decodable {
+  let id: Int
+  let title: String
+  let body: String
+  let userId: Int
+  init(json: [String: Any]) {
+    id = json["id"] as? Int ?? -1
+    title = json["title"] as? String ?? ""
+    body = json["body"] as? String ?? ""
+    userId = json["userId"] as? Int ?? -1
+  }
+}
+
 struct Post: Codable {
   let id: Int
   let title: String
@@ -49,7 +62,6 @@ struct Card: Codable {
   let imageUrl:String?
   let imageUrlHiRes:String?
 }
-
 
 struct Position: Codable, Identifiable {
   let id: String

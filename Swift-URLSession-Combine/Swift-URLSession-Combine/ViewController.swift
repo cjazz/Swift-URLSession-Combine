@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         (print("id: \($0.id) • title: \($0.title)"))
       }
     }
+    
   }
   
   private var cards: [Card] = [] {
@@ -29,6 +30,11 @@ class ViewController: UIViewController {
     }
   }
   
+  var dpst = DPost.self {
+    didSet{
+      print(dpst)
+    }
+  }
   var pst = Pst.self{
     didSet{
         print(pst)
@@ -48,8 +54,23 @@ class ViewController: UIViewController {
     super.viewDidLoad()
   }
   
+  @IBAction func tappedAsync(_ sender: Any) {
+    //
+  }
+    
   @IBAction func tappedURL(_ sender: Any) {
-      getData()
+    
+    //print("{{{{{{{{{{{{{{{{{{ Get Posts Old School }}}}}}}}}}}}}}}}}}")
+    //getPostsOldSchool()
+ 
+    print("{{{{{{{{{{{{{{{{{{ Get a single post Old School w/completion handler }}}}}}}}}}}}}}}}}}")
+    
+    getAPostOldSchool(userId: 1) { pst, error in
+      if let pst = pst {
+        print("\(pst)")
+      }
+    }
+    
   }
   
   @IBAction func tappedCombine(_ sender: Any) {
@@ -68,23 +89,42 @@ class ViewController: UIViewController {
     getPokeCards()
   }
   
-  @IBAction func tappedGetJobs(_ sender: Any) {
-    
-    //https://jobs.github.com/positions.json?search=swift"
-    
-    getJobs()
-  }
-  func getJobs() {
-    let url = URL(string: "https://jobs.github.com/positions.json?search=Swift")!
-    self.cancellable = URLSession.shared.dataTaskPublisher(for: url)
-     .map { $0.data }
-     .decode(type: [Position].self, decoder: JSONDecoder())
-     .replaceError(with: [])
-     .eraseToAnyPublisher()
-     .assign(to: \.jobs, on: self)
-   }
-   
   
+  func getAPostOldSchool(userId: Int, userCompletionHandler: @escaping (Pst?, Error?) -> Void) {
+    let url = URL(string: "https://jsonplaceholder.typicode.com/posts/\(userId)")!
+    URLSession.shared.dataTask(with: url) { (data, response, err) in
+      guard let data = data else { return }
+      do {
+        guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else { return }
+        let post = Pst(json: json)
+        userCompletionHandler(post,nil)
+      } catch let jsonErr {
+        print("Error serializing", jsonErr)
+      }
+    }.resume()
+  }
+  
+  func getPostsOldSchool() {
+    // old school JSONSerialization
+    let jsonUrlStr = "https://jsonplaceholder.typicode.com/posts/1"
+    guard let url = URL(string: jsonUrlStr) else { return }
+  
+    URLSession.shared.dataTask(with: url) { (data, response, err) in
+      
+      guard let data = data else { return }
+      do {
+        guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else { return }
+        
+        let post = Pst(json: json)
+        print(post.title, post.id)
+        
+      } catch let jsonErr {
+        print("Error serializing", jsonErr)
+      }
+    }.resume()
+  }
+  
+
   func getPosts(){
     let url1 = URL(string: "https://jsonplaceholder.typicode.com/posts")!
 
@@ -109,6 +149,7 @@ class ViewController: UIViewController {
        }
   }
   
+  ///////////////////////////   COMBINE SECTION    ///////////////////////////
 
   func getDetails(for id: Int) -> AnyPublisher<Post, Error> {
       let url = URL(string: "https://jsonplaceholder.typicode.com/posts/\(id)")!
@@ -184,26 +225,5 @@ class ViewController: UIViewController {
     .eraseToAnyPublisher()
     .assign(to: \.posts, on: self)
   }
-  
-  func getData() {
-    // old school JSONSerialization
-    let jsonUrlStr = "https://jsonplaceholder.typicode.com/posts/1"
-    guard let url = URL(string: jsonUrlStr) else { return }
-  
-    URLSession.shared.dataTask(with: url) { (data, response, err) in
-      
-      guard let data = data else { return }
-      do {
-        guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else { return }
-        
-        let post = Pst(json: json)
-        print(post.title, post.id)
-        
-      } catch let jsonErr {
-        print("Ërror serializing", jsonErr)
-      }
-    }.resume()
-  }
-
 }
 
